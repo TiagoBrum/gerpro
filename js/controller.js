@@ -8,10 +8,10 @@ angular.module('gerPro', [])
         $scope.atividades = [];
         $scope.atividade = {};
         $scope.conteudos = [
-            {title: "Gerência de Projetos - Introdução", link:"/pages/gpIntro.html"},
-            {title: "Gestão de projetos na prática", link:"/pages/gpPratica.html"},
-            {title: "Anatomia de um projeto", link:"/pages/gpAnatomia.html"},
-            {title: "Abordagens em gestão de projeto", link:"/pages/gpAbordagem.html"},
+            {title: "Gerência de Projetos - Introdução", link:"/pages/gpIntro.html", som: "/sounds/gpIntro.mp3"},
+            {title: "Gestão de projetos na prática", link:"/pages/gpPratica.html", som: "/sounds/gpPratica.mp3"},
+            {title: "Anatomia de um projeto", link:"/pages/gpAnatomia.html", som: "/sounds/gpAnatomia.mp3"},
+            {title: "Abordagens em gestão de projeto", link:"/pages/gpAbordagem.html", som: "/sounds/gpAbordagem.mp3"},
 
         ];
 
@@ -135,6 +135,7 @@ angular.module('gerPro', [])
                     break;
                 case 82: //R
                     console.log("R - repetir atividade");
+                    document.getElementById("somPrincipal").play();
                     break;
                 case 67:
                     if($scope.oController.action != null) return;
@@ -170,6 +171,7 @@ angular.module('gerPro', [])
                     if($scope.oController.action == 2){
                         $scope.conteudoA.option = undefined;
                         $scope.oController.module = false;
+                        document.getElementById("somPrincipal").pause();
                     }
                     break;
             }
@@ -185,7 +187,7 @@ angular.module('gerPro', [])
             var oAtividade = [
                 {pergunta:"Durante a fase de planejamento, a empresa requisitou outro gerente de projetos para tomar a frente, uma vez que o projeto em questão era muito complexo, envolvendo uma série de fornecedores e o gerente atual não possua as características necessárias para o andamento esperado pelo patrocinador. Desta forma, qual a características que o novo gerente deverá possuir?", 
                  resposta:"Alternativa “b”, Proativo. Como este projeto possui vários fornecedores a rede de comunicação envolvida é muito complexa, devendo o gerente de projetos tomar uma série de iniciativas preventivas para baixar custo, verificar a qualidade dos serviços prestados pelos fornecedores e o tempo de entrega dos mesmos", 
-                 mark:false, vdd:false, oAlternativas: [
+                 mark:false, vdd:false, per:"/sounds/per1.mp3", res:"/sounds/res1.mp3", oAlternativas: [
                      {alternativa:"1 - Técnico", vdd:false},
                      {alternativa:"2 - Proativo", vdd:true},
                      {alternativa:"3 - Expeditor", vdd:false},
@@ -193,7 +195,7 @@ angular.module('gerPro', [])
                  ]},
                 {pergunta:"Os membros de uma equipe de projetos reclamam entre si que o gerente de projetos está solicitando uma série de tarefas que eles não têm tempo de fazer devido às suas funções técnicas na empresa. Um consultor, que naquele local chegava, foi questionado por essas pessoas sobre o que ele achava desta situação. Ele achou estranho, porque uma das funções do gerente de projetos é repassar as atividades de maneira tal que todos possam realizá-las no prazo determinado. Sendo assim, ele pediu o cronograma e viu que estava tudo de acordo. Então, ele perguntou: “Quem tem o poder nesta empresa para dar direções a vocês sobre o que fazer?”, e um deles respondeu prontamente: “O nosso gerente que está ali!”. Com esta breve situação, qual deve ser a estrutura organizacional da empresa?",
                  resposta:"Alternativa “d”, Funcional. Pode-se perceber que os membros da equipe dão maior ênfase ao trabalho técnico do que o próprio projeto e, além disso, o gerente de projetos não possui autoridade", 
-                 mark:false, vdd:false, oAlternativas: [
+                 mark:false, vdd:false, per:"/sounds/per2.mp3", res:"/sounds/res2.mp3",oAlternativas: [
                      {alternativa:"1 - Matricial", vdd:false},
                      {alternativa:"2 - Proativo", vdd:false},
                      {alternativa:"3 - O custo das máquinas e dos equipamentos \nnecessários para a execução do projeto", vdd:true},
@@ -201,11 +203,27 @@ angular.module('gerPro', [])
                  ]},
                 {pergunta:"Carla, patrocinadora do projeto, solicita uma reunião ao Alexandre, gerente do projeto, para verificar o andamento. Alexandre se reúne com sua equipe e solicita uma série de informações. Quais informações terão maior relevância para o patrocinador?",
                  resposta:"Alternativa “3”. O patrocinador é a pessoa ou um grupo de dentro ou fora da organização executora que supre os recursos financeiros em dinheiro ou mercadorias/serviços necessários para a execução do projeto. Então, ele deverá acompanhar se o que foi planejado está sendo cumprido, pois caso contrário deverá suprir com mais recursos",
-                 mark:false, vdd:false, oAlternativas: [
+                 mark:false, vdd:false, per:"per3.mp3", res:"res3.mp3",oAlternativas: [
                      {alternativa:"1 -  Prazo do projeto", vdd:false},
                      {alternativa:"2 - O número de fornecedores", vdd:false},
                      {alternativa:"3 - Coordenação", vdd:false},
                      {alternativa:"4 - Funcional", vdd:true},
+                 ]},
+                {pergunta:"O que é o processo de um projeto?",
+                 resposta:"Alternativa: 3 - Uma série de ações que geram um resultado.",
+                 mark:false, vdd:false, per:"/sounds/per4.mp3", res:"/sounds/res4.mp3",oAlternativas: [
+                     {alternativa:"1 - A criação de um produto ou serviço. ", vdd:false},
+                     {alternativa:"2 - A elaboração progressiva resultando em um produto.", vdd:false},
+                     {alternativa:"3 - Uma série de ações que geram um resultado", vdd:false},
+                     {alternativa:"4 - Uma série de ações que permitem ao projeto avançar do conceito até o produto.", vdd:true},
+                 ]},
+                {pergunta:"Há cinco processos de gerenciamento de projetos que permitem que os projetos avancem do início à conclusão. Qual dos itens a seguir não é um dos grupos de processos do gerenciamento de projetos?",
+                 resposta:"Alternativa: 3 - Uma série de ações que geram um resultado.",
+                 mark:false, vdd:false, per:"/sounds/per4.mp3", res:"/sounds/res4.mp3",oAlternativas: [
+                     {alternativa:"1 - Inicio.", vdd:false},
+                     {alternativa:"2 - Planejamento.", vdd:false},
+                     {alternativa:"3 - Comunicação.", vdd:false},
+                     {alternativa:"4 - Encerramento.", vdd:true},
                  ]},
             ];
 
@@ -229,6 +247,10 @@ angular.module('gerPro', [])
                 //<voice-player id="vPergunta" accent="es-ES" text="{{atividade.pergunta}}"></voice-player>
                 //document.querySelector('#vPergunta').speak();
                 //document.getElementById("somPrincipal").play();
+                setInterval(function(){
+                    $scope.oController.sound = $scope.atividade.per;
+                    $scope.$apply();
+                },2000);
             }else{
                 console.log("acabo");
                 $scope.oController.msg = "Você fez um total de "+$scope.atividades.length+" atividades, acertou "+$scope.partida.acertos+ "e errou "+$scope.partida.erros+". Você retorno para a página principal.";
@@ -271,6 +293,9 @@ angular.module('gerPro', [])
         $scope.copyConteudo = function(ind){
             $scope.conteudoA.link = $scope.conteudos[ind].link;
             $scope.conteudoA.title = $scope.conteudos[ind].title;
+            $scope.oController.sound = $scope.conteudos[ind].som;
+            document.getElementById("somPrincipal").play();
+
         };
 
         $scope.sound = function(){
