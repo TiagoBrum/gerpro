@@ -4,18 +4,18 @@ angular.module('gerPro', [])
         /**
          *Objetos principais
         **/
-        $scope.oController = {action: null,option: undefined, module:undefined, som: true, sound:""};
+        $scope.oController = {action: null,option: undefined, module:undefined, som: true, sound:"/sounds/audio1.mp3"};
         $scope.atividades = [];
         $scope.atividade = {};
         $scope.conteudos = [
-            {title: "Artigo Engenharia de Software - Alguns Fundamentos da Engenharia de Software", link:"http://www.devmedia.com.br/principios-da-engenharia-de-software/29630"},
-            {title: "Definição de papéis no processo de Engenharia de Software", link:"http://www.devmedia.com.br/definicao-de-papeis-no-processo-de-engenharia-de-software-revista-engenharia-de-software-magazine-53/26290"},
-            {title: "Princípios da Engenharia de Software", link:"http://www.devmedia.com.br/principios-da-engenharia-de-software/29630"},
-            {title: "Conceitos de Software e Engenharia de Software", link:"http://www.devmedia.com.br/conceitos-de-software-e-engenharia-de-software/15730"},
+            {title: "Gerência de Projetos - Introdução", link:"/pages/gpIntro.html"},
+            {title: "Gestão de projetos na prática", link:"/pages/gpPratica.html"},
+            {title: "Anatomia de um projeto", link:"/pages/gpAnatomia.html"},
+            {title: "Abordagens em gestão de projeto", link:"/pages/gpAbordagem.html"},
 
         ];
 
-        $scope.conteudoA = {};
+        $scope.conteudoA = {option:undefined, link: undefined, title: undefined};
         $scope.partida = {};
 
         /**
@@ -27,43 +27,83 @@ angular.module('gerPro', [])
             switch(option){
                 case 49: //1
                     if($scope.oController.action !== 1 && $scope.oController.action !== 2) return;
-                    console.log("option 1");
-                    $scope.partida.option = 1;
-                    $scope.oController.msg = $scope.atividade.oAlternativas[$scope.partida.option-1].alternativa;
-                    setTimeout(function(){
-                        $scope.$apply();
-                        document.querySelector('#vPergunta').speak();
-                    },500);
+                    if($scope.oController.action == 1){
+                        console.log("option 1");
+                        $scope.partida.option = 1;
+                        $scope.oController.msg = $scope.atividade.oAlternativas[$scope.partida.option-1].alternativa;
+                        setTimeout(function(){
+                            $scope.$apply();
+                            document.querySelector('#vPergunta').speak();
+                        },500);
+                    }else{
+                        console.log("option 1");
+                        $scope.conteudoA.option = 0;
+                        $scope.oController.msg = $scope.conteudos[0].title;
+                        setTimeout(function(){
+                            $scope.$apply();
+                            document.querySelector('#vPergunta').speak();
+                        },500);
+                    }
                     break;
                 case 50: //2
                     if($scope.oController.action !== 1 && $scope.oController.action !== 2) return;
-                    console.log("option 2");
-                    $scope.partida.option = 2;
-                    $scope.oController.msg = $scope.atividade.oAlternativas[$scope.partida.option-1].alternativa;
-                    setTimeout(function(){
-                        $scope.$apply();
-                        document.querySelector('#vPergunta').speak();
-                    },500);
+                    if($scope.oController.action == 1){
+                        console.log("option 2");
+                        $scope.partida.option = 2;
+                        $scope.oController.msg = $scope.atividade.oAlternativas[$scope.partida.option-1].alternativa;
+                        setTimeout(function(){
+                            $scope.$apply();
+                            document.querySelector('#vPergunta').speak();
+                        },500);
+                    }else{
+                        console.log("option 2");
+                        $scope.conteudoA.option = 1;
+                        $scope.oController.msg = $scope.conteudos[1].title;
+                        setTimeout(function(){
+                            $scope.$apply();
+                            document.querySelector('#vPergunta').speak();
+                        },500);
+                    }
                     break;
                 case 51: //3
                     if($scope.oController.action !== 1 && $scope.oController.action !== 2) return;
-                    console.log("option 3");
-                    $scope.partida.option = 3;
-                    $scope.oController.msg = $scope.atividade.oAlternativas[$scope.partida.option-1].alternativa;
-                    setTimeout(function(){
-                        $scope.$apply();
-                        document.querySelector('#vPergunta').speak();
-                    },500);
+                    if($scope.oController.action == 1){
+                        console.log("option 3");
+                        $scope.partida.option = 3;
+                        $scope.oController.msg = $scope.atividade.oAlternativas[$scope.partida.option-1].alternativa;
+                        setTimeout(function(){
+                            $scope.$apply();
+                            document.querySelector('#vPergunta').speak();
+                        },500);
+                    }else{
+                        console.log("option 3");
+                        $scope.conteudoA.option = 2;
+                        $scope.oController.msg = $scope.conteudos[2].title;
+                        setTimeout(function(){
+                            $scope.$apply();
+                            document.querySelector('#vPergunta').speak();
+                        },500);
+                    }
                     break;
                 case 52: //4
                     if($scope.oController.action !== 1 && $scope.oController.action !== 2) return;
-                    console.log("option 4");
-                    $scope.partida.option = 4;
-                    $scope.oController.msg = $scope.atividade.oAlternativas[$scope.partida.option-1].alternativa;
-                    setTimeout(function(){
-                        $scope.$apply();
-                        document.querySelector('#vPergunta').speak();
-                    },500);
+                    if($scope.oController.action == 1){
+                        console.log("option 4");
+                        $scope.partida.option = 4;
+                        $scope.oController.msg = $scope.atividade.oAlternativas[$scope.partida.option-1].alternativa;
+                        setTimeout(function(){
+                            $scope.$apply();
+                            document.querySelector('#vPergunta').speak();
+                        },500);
+                    }else{
+                        console.log("option 4");
+                        $scope.conteudoA.option = 3;
+                        $scope.oController.msg = $scope.conteudos[3].title;
+                        setTimeout(function(){
+                            $scope.$apply();
+                            document.querySelector('#vPergunta').speak();
+                        },500);
+                    }
                     break;
                 case 65: //A
                     if($scope.oController.action !== null) return;
@@ -78,6 +118,11 @@ angular.module('gerPro', [])
                     break;
                 case 72: //H
                     console.log("H - Ajuda");
+                    $scope.oController.sound = "/sounds/ajuda.mp3";
+                    setTimeout(function(){
+                        $scope.$apply();
+                        document.getElementById("somPrincipal").play();
+                    },500);
                     break;
                 case 80: //P
                     if($scope.oController.action !== 1) return;
@@ -94,6 +139,7 @@ angular.module('gerPro', [])
                 case 67:
                     if($scope.oController.action != null) return;
                     console.log("C - Conteudo");
+                    $scope.conteudoA = {option:undefined, link: undefined, title: undefined};
                     $scope.oController.msg = "Conteúdo";
                     setTimeout(function(){
                         $scope.oController.action = 2;
@@ -103,14 +149,28 @@ angular.module('gerPro', [])
                     break;
                 case 13: //Enter
                     console.log("Enter");
-                    $scope.confirm();
+                    if($scope.oController.action == 1){
+                        $scope.confirm();
+                    }else{
+                        $scope.copyConteudo($scope.conteudoA.option);
+                        $scope.oController.module = true;
+                    }
                     break;
                 case 27: //Esc
                     console.log("Esc");
                     $scope.oController.action = null;
+                    $scope.oController.module = false;
+                    $scope.conteudoA.option = undefined;
                     document.getElementById("somPrincipal").pause();
                     document.querySelector('#vPergunta').cancel();
                     $scope.oController.sound = null;
+                    break;
+                case 90: //Z
+                    console.log("Z");
+                    if($scope.oController.action == 2){
+                        $scope.conteudoA.option = undefined;
+                        $scope.oController.module = false;
+                    }
                     break;
             }
         };
@@ -208,9 +268,9 @@ angular.module('gerPro', [])
             }
         };
 
-        $scope.copyConteudo = function(conteudo){
-            $scope.conteudoA = conteudo;
-            $("#iframe").attr('src',$scope.conteudoA.link);   
+        $scope.copyConteudo = function(ind){
+            $scope.conteudoA.link = $scope.conteudos[ind].link;
+            $scope.conteudoA.title = $scope.conteudos[ind].title;
         };
 
         $scope.sound = function(){
