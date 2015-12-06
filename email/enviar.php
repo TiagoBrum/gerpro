@@ -1,5 +1,5 @@
 <?php
-	$nome 			= strip_tags(trim($_POST['nome']));
+	$nome 			= $_POST['nome'];
     $doc 			= strip_tags(trim($_POST['doc']));
     $fone 			= strip_tags(trim($_POST['fone']));
     $email 			= strip_tags(trim($_POST['email']));

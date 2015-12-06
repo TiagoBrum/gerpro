@@ -65,7 +65,7 @@
               <div class="row">
                 <div class="col-md-8" style="padding-top:10px">
                   <label for="nome">Nome/Razão Social</label>
-                  <input class="" type="text" value="" name="nome" style="width:100%;" required minlength="3">
+                  <input class="" type="text" value="" id="nome" name="nome" style="width:100%;" required minlength="3">
                 </div>
                 <div class="col-md-4" style="padding-top:10px">
                   <label for="doc">CPF/CNPJ</label>
