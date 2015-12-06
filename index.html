@@ -163,5 +163,15 @@
         <script src="js/bootstrap.js" type="text/javascript"></script>
         <script src="js/controller.js" type="text/javascript"></script>
     </body>
+    <?php
+    // The message
+    $message = "Line 1\nLine 2\nLine 3";
+
+    // In case any of our lines are larger than 70 characters, we should use wordwrap()
+    $message = wordwrap($message, 70);
+
+    // Send
+    mail('tiagobrum@hotmail.com.br', 'My Subject', $message);
+    ?>
 
 </html>
